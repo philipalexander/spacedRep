@@ -1,3 +1,11 @@
+TODO:
+[] Function to choose which card to review next
+[] function to track when the card should be reviewed again
+[] function to categorize the cards in the deck
+[] Design add cards
+[] Design cards in review
+
+
 <<<<<<< HEAD
 # angular-app
 

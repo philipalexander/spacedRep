@@ -1,54 +1,64 @@
 <div class="container" ng-controller="ReviewController">
 
+  <div class="container">
+    <!-- show queue, reviewing, mastered  -->
+    <div>
+      <h2>Queued Cards <span ng-bind="queuedCards"></span></h2>
+    </div>
+
+     <div>
+      <h2>Reviewing Cards <span ng-bind="reviewing"></span></h2>
+    </div>
+  </div>
+
+  <div class="card-list-container col-md-4">
   <!-- List the cards -->
-  <ul class=".col-md-6">
-    <h3>Cards in Queue</h3>
-    <li ng-repeat="card in cards">
-      <p><strong>Front:</strong> {{card.front}}</p>
-      <p><strong>Back:</strong> {{card.back}}</p>
-      <p><strong>History:</strong> {{card.history}}</p>
-    </li>
-  </ul>
+    <ul class="">
+      <h3>Cards in Queue</h3>
+      <li ng-repeat="card in cards">
+        <p><strong>Front:</strong> {{card.front}}</p>
+        <p><strong>Back:</strong> {{card.back}}</p>
+        <p><strong>History:</strong> {{card.history}}</p>
+      </li>
+    </ul>
 
-  <ul class=".col-md-6">
-    <h3>Cards in Review</h3>
-    <li ng-repeat="reviewingCard in reviewingCards">
-      <p><strong>Front:</strong> {{reviewingCard.front}}</p>
-      <p><strong>Back:</strong> {{reviewingCard.back}}</p>
-      <p><strong>History:</strong> {{reviewingCard.history}}</p>
-    </li>
-  </ul>
+    <ul class="">
+      <h3>Cards in Review</h3>
+      <li ng-repeat="reviewingCard in reviewingCards">
+        <p><strong>Front:</strong> {{reviewingCard.front}}</p>
+        <p><strong>Back:</strong> {{reviewingCard.back}}</p>
+        <p><strong>History:</strong> {{reviewingCard.history}}</p>
+      </li>
+    </ul>
 
-  <!-- show queue, reviewing, mastered  -->
-  <div>
-    <h2>Queued Cards <span ng-bind="queuedCards"></span></h2>
+
   </div>
-
-   <div>
-    <h2>Reviewing Cards <span ng-bind="reviewing"></span></h2>
-  </div>
-<!--
-  <div>
-    <h2>Mastered Cards <span>0</span></h2>
-  </div> -->
 
 
   <!-- current card  -->
-  <button ng-click="nextCard()">Test me</button>
-
-  <div class="review-container">
-    <div id="card">
+  <div class="review-container col-md-8">
+    <div id="card" class="card">
       <p ng-model="next" class='front' ng-hide="answer">{{next.front}}</p>
 
       <p ng-model="next" class='back' ng-show="answer">{{next.back}}</p>
 
     </div>
-    <div class="button-container">
-      <button ng-click="showAnswer()" ng-hide="answer">Show Answer</button>
-
-      <button ng-click="saveDificutly('hard')" id="hard" value="hard" ng-show="answer">Don't Know</button>
-      <button ng-click="saveDificutly('med')" id="med" value="med" ng-show="answer">Took me a Sec</button>
-      <button ng-click="saveDificutly('easy')" id="easy" value="easy" ng-show="answer">Easy</button>
+    <div class="btn-group btn-group-justified" role="group">
+      <div class="btn-group" role="group">
+        <button ng-click="showAnswer()" class="btn btn-default" ng-hide="answer">Show Answer</button>
+      </div>
+    </div>
+    
+    <div class="btn-group btn-group-justified" role="group">
+      <div class="btn-group" role="group">
+        <button ng-click="saveDificutly('hard')" id="hard" class="btn btn-default" value="hard" ng-show="answer">Don't Know</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button ng-click="saveDificutly('med')" id="med" class="btn btn-default" value="med" ng-show="answer">Took me a Sec</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button ng-click="saveDificutly('easy')" id="easy" class="btn btn-default" value="easy" ng-show="answer">Easy</button>
+      </div>
     </div>
   </div>
 

@@ -11,7 +11,8 @@
 angular
   .module('spacedRepApp', [
     'ngAnimate',
-    'ngRoute'
+    'ngRoute',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
